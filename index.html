@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Addition Master 🌟</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Welcome Screen -->
+        <div id="welcomeScreen" class="screen active">
+            <div class="welcome-content">
+                <h1 class="title">🌟 Toplama Ustası 🌟</h1>
+                <p class="subtitle">Hadi birlikte toplama öğrenelim!</p>
+                <div class="star-animation">⭐✨🌟✨⭐</div>
+                <button id="startBtn" class="btn btn-primary">Öğrenmeye Başla!</button>
+                <button id="settingsBtn" class="btn btn-secondary">⚙️ Ayarlar</button>
+                <button id="resetProgressBtnWelcome" class="btn btn-warning">🔄 İlerlemeyi Sıfırla</button>
+            </div>
+        </div>
+
+        <!-- Settings Screen -->
+        <div id="settingsScreen" class="screen">
+            <div class="settings-content">
+                <h2>⚙️ Ayarlar</h2>
+                <div class="setting-group">
+                    <label for="numChoices">Seçenek Sayısı:</label>
+                    <input type="number" id="numChoices" min="2" max="6" value="3">
+                </div>
+                <div class="setting-group">
+                    <label for="numQuestions">Oturum Başına Soru Sayısı:</label>
+                    <input type="number" id="numQuestions" min="10" max="100" value="39">
+                </div>
+                <div class="setting-group">
+                    <label for="successRate">Başarı Oranı (%):</label>
+                    <input type="number" id="successRate" min="50" max="100" value="80">
+                </div>
+                <div class="setting-group">
+                    <label for="timeoutSeconds">Soru Süresi (saniye):</label>
+                    <input type="number" id="timeoutSeconds" min="3" max="30" value="7">
+                </div>
+                <div class="button-group">
+                    <button id="saveSettingsBtn" class="btn btn-primary">Ayarları Kaydet</button>
+                    <button id="backToWelcomeBtn" class="btn btn-secondary">Geri</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Game Screen -->
+        <div id="gameScreen" class="screen">
+            <div class="game-header">
+                <div class="progress-info">
+                    <span id="questionCounter">Soru 1/39</span>
+                    <span id="scoreDisplay">Puan: 0/0</span>
+                </div>
+                <div class="progress-bar-container">
+                    <div id="progressBar" class="progress-bar"></div>
+                </div>
+            </div>
+
+            <div class="game-content">
+                <div id="motivationalMessage" class="motivational-message"></div>
+                
+                <div class="timeout-container">
+                    <div class="timeout-label">⏱️ Kalan Süre</div>
+                    <div class="timeout-bar-container">
+                        <div id="timeoutBar" class="timeout-bar"></div>
+                    </div>
+                    <div id="timeoutCounter" class="timeout-counter">7s</div>
+                </div>
+                
+                <div class="question-container">
+                    <div class="learning-level-display">
+                        <span class="level-label">Öğrenme Seviyesi:</span>
+                        <div class="level-stars" id="levelStars">
+                            <!-- Stars will be dynamically inserted here -->
+                        </div>
+                        <span class="level-number" id="levelNumber">1/10</span>
+                    </div>
+                    <div class="question-box">
+                        <span id="number1" class="number">5</span>
+                        <span class="operator">+</span>
+                        <span id="number2" class="number">3</span>
+                        <span class="equals">=</span>
+                        <span class="question-mark">?</span>
+                    </div>
+                </div>
+
+                <div id="choicesContainer" class="choices-container">
+                    <!-- Choices will be dynamically inserted here -->
+                </div>
+
+                <button id="quitBtn" class="btn btn-secondary quit-btn">Oturumu Bitir</button>
+            </div>
+        </div>
+
+        <!-- Results Screen -->
+        <div id="resultsScreen" class="screen">
+            <div class="results-content">
+                <div id="resultIcon" class="result-icon">🎉</div>
+                <h2 id="resultTitle">Harika İş!</h2>
+                <div class="stats">
+                    <div class="stat-item">
+                        <div class="stat-label">Cevaplanan Sorular</div>
+                        <div id="totalAnswered" class="stat-value">0</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-label">Doğru Cevaplar</div>
+                        <div id="correctAnswers" class="stat-value">0</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-label">Başarı Oranı</div>
+                        <div id="finalSuccessRate" class="stat-value">0%</div>
+                    </div>
+                </div>
+                <div id="resultMessage" class="result-message"></div>
+                <div class="button-group">
+                    <button id="playAgainBtn" class="btn btn-primary">Tekrar Oyna!</button>
+                    <button id="resetProgressBtn" class="btn btn-warning">İlerlemeyi Sıfırla</button>
+                    <button id="backToMenuBtn" class="btn btn-secondary">Ana Menü</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
